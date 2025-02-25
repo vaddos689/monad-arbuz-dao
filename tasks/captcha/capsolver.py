@@ -41,7 +41,7 @@ class Capsolver:
         json_data = {
             "clientKey": API_KEY_CAPSOLVER,
             "task": {
-                "type": "ReCaptchaV3TaskProxyLess",
+                "type": "ReCaptchaV3Task",
                 "websiteURL": "https://testnet.monad.xyz/",
                 "websiteKey": "6LdOf-EqAAAAAAKJ2QB6IqnJfsOl13El4XZwRD8c",
                 # "pageAction": "drip_request",
