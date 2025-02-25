@@ -49,7 +49,6 @@ class Capsolver:
         }
 
         response = await self.async_session.post(url=url, json=json_data)
-        print(f'REPSONSE: {response.json()}')
         if response.status_code == 200:
             answer = response.json()
             if "taskId" in answer:
