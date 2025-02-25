@@ -71,12 +71,8 @@ def main():
 
 
 if __name__ == "__main__":
-    #try:
-        # check_encrypt_param()
-        asyncio.run(initialize_db())
-        create_files()
-        asyncio.run(migrate())
-        set_windows_event_loop_policy()
-        main()
-    # except (SystemExit, KeyboardInterrupt):
-    #     logger.info("Program closed")
+    asyncio.run(initialize_db())
+    create_files()
+    asyncio.run(migrate())
+    set_windows_event_loop_policy()
+    main()
