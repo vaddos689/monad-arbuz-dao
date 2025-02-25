@@ -43,7 +43,7 @@ class Capsolver:
             "task": {
                 "type": "ReCaptchaV3Task",
                 "websiteURL": "https://testnet.monad.xyz/",
-                "websiteKey": "6Lf_xd8qAAAAANYpu_MCMXZA0A2_0F9wgB3pKs5j",
+                "websiteKey": "6LdOf-EqAAAAAAKJ2QB6IqnJfsOl13El4XZwRD8c",
                 "pageAction": "drip_request",
                 "proxy": self.data.proxy
             }
