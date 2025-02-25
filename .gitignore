@@ -1,0 +1,21 @@
+# accounts
+import/
+evm.txt
+proxys.txt
+
+# status
+status/
+accounts.db
+log.txt
+
+# виртуальное окружение
+.env
+.venv
+
+.idea
+.vscode
+
+__pycache__/
+*.pyc
+.git_team
+test.py

@@ -23,8 +23,8 @@ def get_action() -> str:
             choices=[
                 'Import data to db',
                 'Monad',
-                'Apriori',
                 'OnChain stats',
+                'Apriori',
                 'Exit'
             ]
         )

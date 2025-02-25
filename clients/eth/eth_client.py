@@ -53,7 +53,6 @@ class EthClient:
         self.wallet = Wallet(self)
         self.contracts = Contracts(self)
         self.transactions = Transactions(self)
-    
 
     async def send_native(self, data: Accounts, amount: TokenAmount, address: Optional[ChecksumAddress] = None):
 

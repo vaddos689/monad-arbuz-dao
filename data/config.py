@@ -23,14 +23,10 @@ SALT_PATH = os.path.join(STATUS_DIR, 'salt.dat')
 IMPORT_DIR = os.path.join(ROOT_DIR, 'import')
 EVM_PKS = os.path.join(IMPORT_DIR, 'evm_pks.txt')
 PROXIES = os.path.join(IMPORT_DIR, 'proxies.txt')
-# EMAIL_DATA = os.path.join(IMPORT_DIR, 'emails.txt')
-# TWITTER_TOKENS = os.path.join(IMPORT_DIR, 'twitter_tokens.txt')
-# DISCORD_TOKENS = os.path.join(IMPORT_DIR, 'discord_tokens.txt')
-# DISCORD_PROXYS = os.path.join(IMPORT_DIR, 'discord_proxys.txt')
 
-# STATUS DISCORD INVITE
-# DISCORD_TOKEN_SUCCESS = os.path.join(STATUS_DIR, 'discord_success_join.txt')
-# DISCORD_TOKEN_FAILS = os.path.join(STATUS_DIR, 'discord_failed_join.txt')
+# Abis
+ABIS_DIR = os.path.join(ROOT_DIR, 'abis')
+BADGE_ABI = os.path.join(ABIS_DIR, 'apriori.json')
 
 # Создаем
 IMPORTANT_FILES = [EVM_PKS, PROXIES]

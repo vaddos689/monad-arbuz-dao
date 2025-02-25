@@ -1,7 +1,21 @@
 from typing import Union
 from decimal import Decimal
 from eth_utils import to_wei, from_wei
+from eth_typing import ChecksumAddress
+from typing import Union, Dict, List, Any
 from data.auto_repr import AutoRepr
+
+class RawContract(AutoRepr):
+    """
+    An instance of a raw contract.
+
+    Attributes:
+        address (ChecksumAddress): a contract address.
+        abi (List[Dict[str, Any]]): an ABI of the contract.
+
+    """
+    address: ChecksumAddress
+    abi: List[Dict[str, Any]]
 
 class TxArgs(AutoRepr):
     """

@@ -15,8 +15,6 @@ from settings.settings import ASYNC_TASK_IN_SAME_TIME
 from tasks.main import get_start
 from migrate import migrate
 from utils.reset_count_progress import set_progress_to_zero
-# from utils.encrypt_params import check_encrypt_param
-from utils.headers import compute_version, assemble_build
 
 
 def main():
@@ -62,32 +60,11 @@ def main():
                     case "Stake MON":
                         asyncio.run(get_start(semaphore, "Stake MON"))
             
-            case "OnChain stats": # TODO
+            case "OnChain stats":
                   onchain_choice = onchain_stats_menu()
                   match onchain_choice:
                        case "Update MON balance":
                             asyncio.run(get_start(semaphore, "Update MON balance"))
-
-                    # case "Sahara on-chain":
-                    #     sahara_onchain_choise = sahara_onchain_menu()
-                    #     match sahara_onchain_choise:
-                    #         case "SaharaAI - Daily Gobi Desert (on-chain)":
-                    #             asyncio.run(get_start(semaphore, "SaharaAI - Daily Gobi Desert (on-chain)"))
-
-                    #         case "SaharaAI Faucet":
-                    #             asyncio.run(get_start(semaphore, "SaharaAI Faucet"))
-
-                    #         case "SaharaAI Parse Native Balance":
-                    #             asyncio.run(get_start(semaphore, "SaharaAI Parse Native Balance"))
-
-                    # case "Jebroa":
-                    #     gobi_desert_choise = jebroa_desert_menu()
-                    #     match gobi_desert_choise:
-                    #         case "Account registration in Data Services Platform":
-                    #             asyncio.run(get_start(semaphore, "Account registration in Data Services Platform"))
-
-                    # case "SaharaAI Parse ShardAmount":
-                    #     asyncio.run(get_start(semaphore, "SaharaAI Parse ShardAmount"))
             
             case "Exit":
                 sys.exit(1)

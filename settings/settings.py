@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 from data.config import logger
 from distutils.util import strtobool
 
-load_dotenv()
+load_dotenv(dotenv_path='.env')
 
 try:
     # КОЛ-ВО ПОПЫТОК

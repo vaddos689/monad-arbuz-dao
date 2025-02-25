@@ -37,19 +37,19 @@ class Capsolver:
     async def create_task(self):
         """Создание задачи для решения Recaptcha капчи через Capsolver."""
         url = "https://api.capsolver.com/createTask"
-
         json_data = {
             "clientKey": API_KEY_CAPSOLVER,
             "task": {
                 "type": "ReCaptchaV3Task",
                 "websiteURL": "https://testnet.monad.xyz/",
                 "websiteKey": "6LdOf-EqAAAAAAKJ2QB6IqnJfsOl13El4XZwRD8c",
-                "pageAction": "drip_request",
+                # "pageAction": "drip_request",
                 "proxy": self.data.proxy
             }
         }
 
         response = await self.async_session.post(url=url, json=json_data)
+        print(f'REPSONSE: {response.json()}')
         if response.status_code == 200:
             answer = response.json()
             if "taskId" in answer:

@@ -9,6 +9,7 @@ from settings.settings import SLEEP_BEETWEEN_ACTIONS, ACCOUNT_SHUFFLE
 from tqdm import tqdm
 from tasks.monad_xyz import MonadXyz
 from tasks.apriori import Apriori
+from tasks.onchain import Onchain
 from data.models import Networks
 
 
@@ -77,14 +78,16 @@ async def start_task(account_data, quest):
             async with MonadXyz(data=account_data) as monad:
                 return await monad.claim_faucet()
         
-        # Apriori
-        if quest in {"Stake MON"}:
-            async with Apriori(data=account_data) as apriori:
-                return await apriori.stake_mon()
         # OnChain stats
         if quest in {"Update MON balance"}:
-            async with Apriori(data=account_data) as apriori:
+            async with Onchain(data=account_data, network=Networks.Monad) as onchain:
+                return await onchain.parse_native_balance()
+
+        # Apriori
+        if quest in {"Stake MON"}:
+            async with Apriori(data=account_data, network=Networks.Monad) as apriori:
                 return await apriori.stake_mon()
+
         # elif quest in {"SaharaAI Parse ShardAmount"}:
         #     async with Sahara(data=account_data) as sahara:
         #         return await sahara.parse_shard_amount()

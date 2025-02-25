@@ -31,7 +31,7 @@ async def get_accounts(
 
     elif quest in {"Stake MON"}: # Apriori
         query = select(Accounts).where(
-            Accounts.mon_balance > APRIORI_STAKE_AMOUNT_RANGE[1], # Баланс MON больше максимально допустимого кол-во MON для стейка
+            Accounts.mon_balance > 0,
             Accounts.finished == False
         )
 
