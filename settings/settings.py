@@ -23,11 +23,7 @@ try:
     SLEEP_TO: int = int(os.getenv('SLEEP_TO'))
     SLEEP_BEETWEEN_ACTIONS: list = [SLEEP_FROM, SLEEP_TO]
 
-    ACCOUNT_SHUFFLE: bool = bool(strtobool(os.getenv('ACCOUNT_SHUFFLE')))
-
-    PERCENT_NATIVE_TO_TX = os.getenv('PERCENT_NATIVE_TO_TX')
-    if PERCENT_NATIVE_TO_TX:
-        PERCENT_NATIVE_TO_TX = ast.literal_eval(PERCENT_NATIVE_TO_TX) 
+    ACCOUNT_SHUFFLE: bool = bool(strtobool(os.getenv('ACCOUNT_SHUFFLE'))) 
     MIN_BALANCE = float(os.getenv('MIN_BALANCE'))
 
     # Apriori

@@ -87,27 +87,3 @@ async def start_task(account_data, quest):
         if quest in {"Stake MON"}:
             async with Apriori(data=account_data, network=Networks.Monad) as apriori:
                 return await apriori.stake_mon()
-
-        # elif quest in {"SaharaAI Parse ShardAmount"}:
-        #     async with Sahara(data=account_data) as sahara:
-        #         return await sahara.parse_shard_amount()
-            
-        # elif quest in {"SaharaAI Parse Native Balance"}:
-        #     async with Sahara(data=account_data, network=Networks.SaharaAI) as sahara:
-        #         return await sahara.parse_native_balance()
-
-        # elif quest in {"SaharaAI - Daily Gobi Desert (on-chain)"}:
-        #     async with Sahara(data=account_data, network=Networks.SaharaAI) as sahara:
-        #         return await sahara.claim_gobi_desert_onchain_daily()
-
-        # elif quest in {"Gobi Desert - Daily", "Gobi Desert - Social Media", "Unlink bad Twitter token from Galxe"}:
-        #     async with GalxeRequests(data=account_data) as galxe:
-        #         return await galxe.start_task(quest)
-        
-        # elif quest in {"Account registration in Data Services Platform"}:
-        #     async with Sahara(data=account_data, network=Networks.SaharaAI) as sahara:
-        #         return await sahara.start_account_registration_in_dsp()
-
-    # else:
-    #     discord = DiscordInvite(account_data, quest)
-    #     return await discord.start_accept_discord_invite()
