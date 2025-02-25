@@ -18,6 +18,7 @@ class Capsolver:
         for num, _ in enumerate(range(NUMBER_OF_ATTEMPTS), start=1):
             try:
                 status, task_id = await self.create_task()
+                
                 if status:
                     logger.info(f'[{self.data.id}] | {self.data.evm_address} | успешно создал задачу: {task_id}')
                     status, answer = await self.check_capsolver_task_complete(task_id)
@@ -40,7 +41,7 @@ class Capsolver:
         json_data = {
             "clientKey": API_KEY_CAPSOLVER,
             "task": {
-                "type": "ReCaptchaV3Task",
+                "type": "ReCaptchaV3TaskProxyLess",
                 "websiteURL": "https://testnet.monad.xyz/",
                 "websiteKey": "6LdOf-EqAAAAAAKJ2QB6IqnJfsOl13El4XZwRD8c",
                 # "pageAction": "drip_request",
@@ -49,6 +50,7 @@ class Capsolver:
         }
 
         response = await self.async_session.post(url=url, json=json_data)
+
         if response.status_code == 200:
             answer = response.json()
             if "taskId" in answer:

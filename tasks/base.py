@@ -20,7 +20,8 @@ class Base:
         else:
             self.async_session = BaseAsyncSession(
                 verify=False, 
-                user_agent=self.data.user_agent
+                user_agent=self.data.user_agent,
+                proxy=self.data.proxy
             )
 
         self.version = self.data.user_agent.split('Chrome/')[1].split('.')[0]
