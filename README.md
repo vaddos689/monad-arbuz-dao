@@ -37,10 +37,9 @@ proxies.txt - прокси формата http://user:password@ip:port
 python main.py
 ```
 # Модули
-1. Monad: 
-	1.1 MON faucet - официальный кран Monad https://testnet.monad.xyz/
-Требуется API KEY капчи в .env
-2. OnChain stats:
-	2.1 Update MON balance - Обновляет баланс токенов MON в базе данных (status/accounts.db)
-3. Apriori
-	3.1 Stake MON - стейкинг MON из диапазона  APRIORI_STAKE_AMOUNT_RANGE  .env файла
+### 1. Monad: 
+##### 1.1MON faucet - официальный кран Monad https://testnet.monad.xyz/. Требуется API KEY капчи в .env
+### 2. OnChain stats:
+##### 2.1 Update MON balance - Обновляет баланс токенов MON в базе данных (status/accounts.db)
+### 3. Apriori
+#####	3.1 Stake MON - стейкинг MON из диапазона  APRIORI_STAKE_AMOUNT_RANGE  .env файла
