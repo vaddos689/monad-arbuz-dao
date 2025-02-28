@@ -14,8 +14,7 @@ from utils.encrypt_params import get_private_key
 from tasks.base import Base
 from datetime import datetime, timezone
 from data.models import TokenAmount, Networks
-from tasks.captcha.capsolver import Capsolver
-                      
+from tasks.captcha.capsolver import Capsolver                      
 
 class MonadXyz(Base):
     def __init__(self, data: Accounts, async_session: BaseAsyncSession | None = None, eth_client: EthClient | None = None, network=Networks.Ethereum):
@@ -59,7 +58,7 @@ class MonadXyz(Base):
 
         json_data = {
             "address": self.data.evm_address,
-            "recaptchaToken": cf_turnstile_response['gRecaptchaResponse'],
+            "cloudFlareResponseToken": cf_turnstile_response['token'],
             "visitorId": visitor_id,
         }
         response = await self.async_session.post(
@@ -83,7 +82,6 @@ class MonadXyz(Base):
         captcha_solution = await Capsolver(self.data, self.async_session).wait_for_recaptcha()
         if captcha_solution:
             status, msg = await self.faucet_token_request(captcha_solution)
-                  
             if status:
                 self.data.mon_faucet = datetime.now(timezone.utc)
                 async with tasks_lock:

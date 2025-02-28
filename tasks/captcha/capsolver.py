@@ -41,11 +41,11 @@ class Capsolver:
         json_data = {
             "clientKey": API_KEY_CAPSOLVER,
             "task": {
-                "type": "ReCaptchaV2Task",
+                "type": "AntiTurnstileTaskProxyLess",
                 "websiteURL": "https://testnet.monad.xyz/",
-                "websiteKey": "6LdNnOQqAAAAAAdV-2vvDIFO8F8vbowk6lYn9cNi",
-                "pageAction": "drip_request",
-                "proxy": self.data.proxy
+                "websiteKey": "0x4AAAAAAA-3X4Nd7hf3mNGx",
+                # "pageAction": "drip_request",
+                # "proxy": self.data.proxy
             }
         }
 
@@ -71,7 +71,6 @@ class Capsolver:
 
             response = await self.async_session.post(url=url, json=json_data)
             answer = response.json()
-
             if answer.get("status") == "processing":
                 attempts += 1
                 await asyncio.sleep(1)
